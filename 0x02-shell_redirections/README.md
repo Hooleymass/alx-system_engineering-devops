@@ -1,1 +1,1 @@
-This project covers basic concepts in Shell, I/O Redirections and filters
+Basic concepts in Shell, I/O Redirections and filters
