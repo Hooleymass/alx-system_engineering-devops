@@ -1,0 +1,9 @@
+#!/isr/bin/env bash
+#This script in until loop displays "Best School" 1 tims
+
+counter=1
+ until [ $counter -gt 10 ]
+ do
+    echo "Best school"
+    ((counter++))
+done
