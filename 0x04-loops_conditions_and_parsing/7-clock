@@ -17,5 +17,5 @@ while [ $hours -lt 3 ]; do
         ((hours++))
         minutes=1
     fi
-done
+done | head -n 70
 
