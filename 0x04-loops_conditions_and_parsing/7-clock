@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+#12 hour clock
+
+hours=0
+minutes=1
+
+while [ $hours -lt 3 ]; do
+    if [ $minutes -eq 1 ]; then
+        echo "Hour: $hours"
+    fi
+
+    echo $minutes
+
+    ((minutes++))
+
+    if [ $minutes -eq 60 ]; then
+        ((hours++))
+        minutes=1
+    fi
+done
+
