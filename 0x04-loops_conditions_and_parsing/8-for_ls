@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+#Term commands $() or `` wih loops
+
+for files in $(ls | cut -d '-' -f 2); do
+    echo $files
+done
