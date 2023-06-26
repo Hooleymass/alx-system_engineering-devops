@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+#Bad lucks using case
 
 counter=1
 
