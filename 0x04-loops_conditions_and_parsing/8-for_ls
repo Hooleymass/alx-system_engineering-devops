@@ -1,6 +1,10 @@
 #!/usr/bin/env bash
-#Term commands $() or `` wih loops
 
-for files in $(ls | cut -d '-' -f 2); do
-    echo $files
+# Loop through each file in the current directory using a glob pattern
+for file in *; do
+    if [[ -f "$file" ]]; then
+        filename=$(echo "$file" | cut -d '-' -f 2)
+        echo "$filename"
+    fi
 done
+
