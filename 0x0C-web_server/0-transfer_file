@@ -20,9 +20,9 @@ export SCP_OPTIONS="-o StrictHostKeyChecking=no"
 scp -i "$path_to_ssh_key" $path_to_file "$username@$ip:~/"
 
 # Check if the transfer was successful
-if [ "$?" -eq 0 ]; then
-    echo "File transfer completed successfully."
-else
-    echo "File transfer failed."
-fi
+#if [ "$?" -eq 0 ]; then
+#    echo "File transfer completed successfully."
+#else
+#    echo "File transfer failed."
+#fi
 
