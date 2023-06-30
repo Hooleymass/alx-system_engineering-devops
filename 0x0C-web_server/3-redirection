@@ -1,10 +1,17 @@
 #!/usr/bin/env bash
 # Permanent redirection .....
 
-
 # Configure Nginx to redirect /redirect_me
 sudo sed -i '/listen 80 default_server;/a \        location /redirect_me {\n            return 301 https://www.example.com/redirected_page;\n        }' /etc/nginx/sites-available/default
 
 # Restart Nginx
 sudo service nginx restart
+
+# Verify redirection
+response_code=$(curl -sI http://localhost/redirect_me | awk '/^HTTP/ {print $2}')
+if [ "$response_code" -eq 301 ]; then
+    echo "Redirection is configured correctly - 301 Moved Permanently"
+else
+    echo "Redirection is not configured correctly - Expected: 301, Got: $response_code"
+fi
 
