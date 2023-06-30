@@ -1,22 +1,18 @@
-#!/usr/bin/env bash
+#!/bin/bash
 # Update package list and install Nginx
 
-apt-get update
-apt-get install -y nginx --allow-downgrade
+sudo apt-get update
 
-# Configure Nginx to return "Hello World!" at root
-echo 'server {
-    listen 80 default_server;
-    listen [::]:80 default_server;
+# Install Nginx
+sudo apt-get install -y nginx --allow-downgrade
 
-    root /var/www/html;
-    index index.html;
-
-    location / {
-        return 200 "Hello World!";
-    }
-}' > /etc/nginx/sites-available/default
+# Configure Nginx to listen on port 80
+sudo sed -i 's/.*listen 80 default_server;/listen 80;/' /etc/nginx/sites-available/default
 
 # Restart Nginx
-service nginx restart
+sudo service nginx restart
+
+# Create an index.html file with "Hello World!"
+echo "Hello World!" | sudo tee /var/www/html/index.html > /dev/null
+
 
