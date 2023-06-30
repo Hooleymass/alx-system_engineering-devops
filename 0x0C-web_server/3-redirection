@@ -1,3 +1,10 @@
 #/usr/bin/env bash
 # Permanent redirection .....
 
+
+# Configure Nginx to redirect /redirect_me
+sudo sed -i '/listen 80 default_server;/a \        location /redirect_me {\n            return 301 https://www.example.com/redirected_page;\n        }' /etc/nginx/sites-available/default
+
+# Restart Nginx
+sudo service nginx restart
+
