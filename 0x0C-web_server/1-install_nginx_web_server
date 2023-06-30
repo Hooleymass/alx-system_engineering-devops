@@ -20,6 +20,3 @@ echo 'server {
 # Restart Nginx
 service nginx restart
 
-# Print success message
-echo "Nginx installation and configuration completed successfully."
-
