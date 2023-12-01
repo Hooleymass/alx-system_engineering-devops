@@ -2,9 +2,9 @@
 
 import sys
 import requests
-"""
-Author: HooleyMass
-"""
+'''A script that gathers employee name completed
+tasks and total number of tasks from an API
+'''
 
 
 def get_employee_info(employee_id):
@@ -36,11 +36,13 @@ def get_employee_info(employee_id):
     total_tasks = len(todos_data)
 
     # Display employee TODO list progress
-    print(f"Employee {employee_name} is done with tasks({num_completed_tasks}/{total_tasks}):")
+    print(f"Employee {employee_name} is done\
+            with tasks({num_completed_tasks}/{total_tasks}):")
 
     # Display titles of completed tasks
     for task in completed_tasks:
         print(f"\t{task['title']}")
+
 
 if __name__ == "__main__":
     # Check if the correct number of command-line arguments is provided
@@ -59,4 +61,3 @@ if __name__ == "__main__":
 
     # Call the function to get and display employee TODO list progress
     get_employee_info(employee_id)
-
