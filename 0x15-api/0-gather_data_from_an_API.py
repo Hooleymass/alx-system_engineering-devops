@@ -2,6 +2,10 @@
 
 import sys
 import requests
+"""
+Author: HooleyMass
+"""
+
 
 def get_employee_info(employee_id):
     """
